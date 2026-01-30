@@ -21,3 +21,11 @@ pipeline:
     - image: docker.io/nephio/dnn-fn:latest
     - image: docker.io/nephio/interface-fn:latest
     - image: docker.io/nephio/nfdeploy-fn:latest
+openAPI:
+  definitions:
+    io.k8s.cli.setters.clusterName:
+      x-k8s-cli:
+        setter:
+          name: clusterName
+          value: example
+
