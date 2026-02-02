@@ -7,3 +7,9 @@ metadata:
     kpt.dev/config-injection: required
 spec:
   clusterName: edge-1
+  cnis:
+  - macvlan
+  - ipvlan
+  - sriov
+  masterInterface: eth1 # kpt-set: ${master-interface}
+
