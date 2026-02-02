@@ -30,18 +30,18 @@
       - metadata.annotations.[specializer.nephio.org/owner]
       options:
         delimiter: '|'
-        index: 2
+        index: 1
     - select:
         kind: Capacity
       fieldPaths:
       - metadata.annotations.[specializer.nephio.org/owner]
       options:
         delimiter: '|'
-        index: 2
+        index: 1
     - select:
         kind: DataNetwork
       fieldPaths:
       - metadata.annotations.[specializer.nephio.org/owner]
       options:
         delimiter: '|'
-        index: 2
+        index: 1
