@@ -5,7 +5,6 @@ metadata:
   annotations:
     config.kubernetes.io/local-config: "true"
 replacements:
-# Step 1: Update NFDeployment name with clusterName
 - source:
     kind: WorkloadCluster
     name: workload-cluster
@@ -18,30 +17,24 @@ replacements:
     options:
       delimiter: '-'
       index: 1
-
-# Step 2: Propagate updated NFDeployment name to owner annotations
-- source:
-    kind: NFDeployment
-    fieldPath: metadata.name
-  targets:
   - select:
       kind: Interface
     fieldPaths:
     - metadata.annotations.[specializer.nephio.org/owner]
     options:
-      delimiter: '|'
-      index: 2
-- select:
-    kind: Capacity
+      delimiter: '-'
+      index: 1
+  - select:
+      kind: Capacity
     fieldPaths:
     - metadata.annotations.[specializer.nephio.org/owner]
-   options:
-     delimiter: '|'
-     index: 2
-- select:
+    options:
+      delimiter: '-'
+      index: 1
+  - select:
       kind: DataNetwork
     fieldPaths:
     - metadata.annotations.[specializer.nephio.org/owner]
     options:
-      delimiter: '|'
-      index: 2
+      delimiter: '-'
+      index: 1
