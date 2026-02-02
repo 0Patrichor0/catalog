@@ -6,6 +6,9 @@ metadata:
     config.kubernetes.io/local-config: "true"
 info:
   description: example upf blueprint package
+  readinessGates:  
+  - conditionType: config.injection.WorkloadCluster.workload-cluster
+  - conditionType: nephio.org.Specializer.specialize  
 pipeline:
   mutators:
     - image: ghcr.io/kptdev/krm-functions-catalog/apply-replacements:v0.1.1
