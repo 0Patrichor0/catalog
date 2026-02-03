@@ -4,6 +4,7 @@ metadata:
   name: propagate-name
   annotations:
     config.kubernetes.io/local-config: "true"
+replacements:
 - source:
     kind: NFDeployment
     fieldPath: metadata.name
