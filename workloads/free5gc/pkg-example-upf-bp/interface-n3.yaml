@@ -3,12 +3,11 @@ kind: Interface
 metadata:
   name: n3
   annotations:
-    nephio.org/network-name: n3
     config.kubernetes.io/local-config: "true"
     specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NFDeployment.upf-example
     specializer.nephio.org/namespace: example
 spec:
   networkInstance:
-    name: vpc-ran
+    name: vpc-internet
   cniType: macvlan
   attachmentType: vlan
