@@ -10,4 +10,3 @@ spec:
   networkInstance:
     name: vpc-internet
   cniType: macvlan
-  attachmentType: vlan
